@@ -23,7 +23,7 @@ const ButtonFilter = ({title,filter}) => {
       setIdFilter('General')
       setComponentsFiltered(allComponents)
     }
-    navigate(`/`);
+    navigate(`/GalleryComponents`);
   } 
 
     return(
