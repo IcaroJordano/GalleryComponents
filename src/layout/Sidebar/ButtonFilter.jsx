@@ -8,17 +8,19 @@ const ButtonFilter = ({title,filter}) => {
   const navigate = useNavigate();
 
   
-  const {setComponentsFiltered,componentsFiltered,isLoading,allComponents} = useContext(SearchContext)
+  const {setComponentsFiltered,setIdFilter,componentsFiltered,isLoading,allComponents} = useContext(SearchContext)
   
   
-  const styleClass= "w-11/12 hover:bg-sky-200/50 hover:text-sky-600 justify-between flex rounded-lg ps-4 py-3 ms-2 "
+  const styleClass= "w-11/12 hover:bg-sky-200/50 hover:text-sky-600  justify-center lg:justify-between  flex rounded-lg ps-4 py-3 ms-2 "
   
   const onFilter =()=>{
     if(filter){
       
       setComponentsFiltered(allComponents.filter((component) => component.tech.toLowerCase().includes(filter.toLowerCase())))
+      setIdFilter(filter)
     }
     else{
+      setIdFilter('General')
       setComponentsFiltered(allComponents)
     }
     navigate(`/`);
@@ -30,7 +32,7 @@ const ButtonFilter = ({title,filter}) => {
               onClick={()=>{onFilter()}}
             >
               {title}
-              <IoIosArrowForward className="mr-4" />
+              <IoIosArrowForward className={`mr-4 lg:flex hidden` } />
             </button>
           );
     

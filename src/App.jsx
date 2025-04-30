@@ -6,7 +6,6 @@ import { SearchProvider } from "./context/SearchContext";
 
 function App() {
   return (
-    <SearchProvider>
       <Router>
         <div className="lg:flex">
           <MobileSidebar />
@@ -14,7 +13,6 @@ function App() {
           <Rotas />
         </div>
       </Router>
-    </SearchProvider>
   );
 }
 
